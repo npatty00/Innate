@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Innate - Another Tech Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 50px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<!-- Google web fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">innate.cc</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" style="float: right;">
+					 <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+					<li>
+                        <a href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Innate: Another Tech Blog</h1>
+                <p>A collection of digital marketing posts and maker projects. Click a tag below.</p>
+                <a href="tag/smart-mirror.html"><a href="tag/smart-mirror.html"><span class="label label-default">Smart Mirror</span></a></a> <a href="tag/marketing.html"><a href="tag/marketing.html"><span class="label label-primary">Marketing</span></a></a> <a href="tag/raspberry-pi.html"><a href="tag/raspberry-pi.html"><span class="label label-success">Raspberry Pi</span></a></a> <a href="tag/google-analytics.html"><a href="tag/google-analytics.html"><span class="label label-info">Google Analytics</span></a></a> <a href="tag/google-tag-manager.html"><span class="label label-warning">Google Tag Manager</span></a>
+				<p></p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+	<!-- Page Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<h2 class="section-heading">How To Use UTM Parameters</h2>
+					
+                        <img class="img-responsive" src="\img\apple-logo.jpeg" alt="">
+
+                    <span class="caption text-muted">IMAGE CAPTION</span>
+                    
+					<h3 class="section-heading">Overview:</h3>
+					<p>UTM parameters attach a small amount of data to the end of a URL. This enables marketers to add and control specific data about a link: where the link was posted, what keywords are relevant to the link, what advertising campaign the link is a part of, and to differentiate between ad creative/copy. This data is sent to Google Analytics and can then be analyzed. UTM Parameters enable the attribution of conversions and behavior (like a product purchase or lead) back to specific campaigns, websites, keywords, and ad creative. They are commonly used when a brand posts a link across the web: Display ads, Facebook posts, Blog posts, Email newsletters, etc. UTM stands for Urchin Traffic Monitor, created by Urchin Software in the late 1990s and acquired by Google in 2005.</p>
+					<p>These URLs are easily created (and shortened) with Google’s Campaign URL Builder.</p>
+					
+					<h3 class="section-heading">Example:</h3>
+					<p>Our example campaign is a Black Friday sale for our website, www.Nike.com. We are selling Kevin Durant’s new basketball shoes, the KD7. We are creating a facebook post with an image of Kevin Durant and targeting only men. We’ve created the following link in the URL builder:</p>
+					<p><i>www.nike.com/KD7?utm_source=facebook&utm_source=social&utm_campaign=blackfriday&utm_content=kevin_durant&utm_term=none</i></p>
+					<p>The page we are sending traffic to is www.nike.com/KD7. Everything after that (starting with the “?”) is a UTM Parameter. There are five parameters added to this link, each with a unique piece of data. They are separated from each other with the “&” symbol. If you are not using one of these parameters, you can delete or use a placeholder (“none”).</p>
+					
+					<h3 class="section-heading">How to Use:</h3>
+					<p>Each Parameter has a specific intended use. While you can technically use a parameter for a different purpose than intended, it is best to follow these practices so other users can understand the data created by these links. </p>
+					<p>Note: If Auto-tagging is enabled in AdWords, and AdWords is linked to your Google Analytics Property, you do not need UTM parameters in AdWords, they are already correctly tracked by Google.</p>
+					<p>utm_source:
+The source is the specific website the traffic originated from. Most often the source is the actual website where the link appears. A link posted to your Facebook page should use utm_source=facebook. This changes if you’re purchasing ads through a vendor. For example, if you buy placements from a demand side platform (DSP), you would use the name of that DSP utm_source=adwords</p>
+					<p>utm_medium:
+The medium is the type or categorization of the source. In Google Analytics sources are grouped together. For example, twitter and facebook would have different sources, but they would both be utm_source=social. Here you can also differentiate between organic and paid versions of the same channel, utm_source=social-organic and utm_source=social-paid. Be sure to use a “-” or “_” consistently, becauses you can’t use a space in a URL.</p>
+					<p>utm_campaign:
+The campaign separates different advertising campaigns. If you tag all your Black Friday campaigns with utm_campaign=blackfriday you can easily see how much money was spent or generated across the entire campaign, regardless of whether it was spent on social or other channels. </p>
+				
+					<p>utm_content:
+The content can be used to differentiate ads. All the other parameters may be the same if you have two ads on Facebook for the same campaign that target the same audience. Using utm_content=kd250x250 and utm_content=rw468x60 allows you to differentiate between different types of ads (Kevin Durant themed vs. Russell Westbrook) and ad sizes (250x250 vs. 468x60).</p>
+					<p>utm_term:
+Term is used to track what keyword an ad targeted. In AdWords (with Auto-tagging enabled) this parameter is automatically filled with the keyword you bidded on. This allows you to track behavior back to a specific keyword and ad. </p>
+					
+					<h3 class="section-heading">Final Notes:</h3>
+					<p>There are no rules for using utm parameters. Following these guidelines is a great start, but it is up to you and your organization to find a strategy that works best. Whatever you decide, it is critically important to stay consistent. Most marketers only use lowercase letters, and use a “-” instead of a space. Write down and remember whether you use organic-social or social-organic. And remember, you can switch around these parameters to fit your needs, but Google Analytics uses source and medium to group your traffic into channels.</p>
+					
+				   <p>Written by <a href="http://innate.cc/about.html">Nathan Patrick</a>. Photographs by <a href="https://unsplash.com">Unsplash</a>.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

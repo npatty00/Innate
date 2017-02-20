@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Innate - Another Tech Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 50px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<!-- Google web fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">innate.cc</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" style="float: right;">
+					 <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+					<li>
+                        <a href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Innate: Another Tech Blog</h1>
+                <p>A collection of digital marketing posts and maker projects. Click a tag below.</p>
+                <a href="tag/smart-mirror.html"><a href="tag/smart-mirror.html"><span class="label label-default">Smart Mirror</span></a></a> <a href="tag/marketing.html"><a href="tag/marketing.html"><span class="label label-primary">Marketing</span></a></a> <a href="tag/raspberry-pi.html"><a href="tag/raspberry-pi.html"><span class="label label-success">Raspberry Pi</span></a></a> <a href="tag/google-analytics.html"><a href="tag/google-analytics.html"><span class="label label-info">Google Analytics</span></a></a> <a href="tag/google-tag-manager.html"><span class="label label-warning">Google Tag Manager</span></a>
+				<p></p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+	<!-- Page Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<h2 class="section-heading">Excluding Referral Spam in Google Analytics</h2>
+					
+                        <img class="img-responsive" src="\img\apple-logo.jpeg" alt="">
+
+                    <span class="caption text-muted">IMAGE CAPTION</span>
+                    
+					<p>An impressive amount of spam has been appearing in many marketer’s Google analytics profile. Of our web properties, over 80% were affected (link). Luckily there is a simple and quick fix. While the spammers will continue to innovate and get around filters, learning how to identify and exclude this type of traffic will beat them to the punch. Following this guide will not only teach you how to get rid of current referral spam, but identify and block any future spam as soon as you see it.</p>
+					<p>The current spam campaign affecting our websites looks like this: (Not so tough to spot, is it?)</p>
+					<p>To stop this bot traffic from being recorded in the future, we’ll create a filter to exclude this specific type of traffic. When you see other types of spam, you can follow the same steps to create new filters.</p>
+					<p>On the top navigation bar of Google analytics, click the “Admin” tab. Navigate to the furthest left column, “Account”. Click “All Filters”.</p>
+					<p>Click the red “+ ADD FILTER” button. Use the following settings:</p>
+					<p>Name your filter so anyone can understand what it does. This filter will exclude any traffic whose “language” attribute contains the Cyrillic letter that looks like “G”. (More on why we did this further down)
+Choose the filter type of Custom. Predefined filters won’t accomplish what we need.
+Choose Exclude. This option will find any traffic you identify, and stop it from appearing your data. 
+In the Filter Field, search for Language Settings. 
+In Filer Pattern, copy and paste the Cyrillic “G”.
+</p>
+					<p>When a user visits your website their web browser sends a little extra data that is stored in the header. This includes information like what kind of device they use, the size of the screen, and the language to display the site in. Our Filter Field says to look at what language is provided in the header of the traffic to the site. The Filter Pattern says to only grab traffic whose language contains* the fake letter “G”. </p>
+					<p>Now you can add your filter to a view. We highly recommend creating a test view and only applying this filter to that view. After a couple days, go back and check if it's working as intended. If all your data looks okay, then you can apply this filter to your primary view. 
+
+For future spammers, simply identify any dimension (you can see a list in the dropdown of Filter Field) and a character or set of characters that will uniquely identify that spam. For example, for spam traffic coming in as referral from socialbuttons.xyz, create a filter with the Filter Field of “Referral” and the Filter Pattern of “socialbuttons.yxz”</p>
+					<p>*This actually uses regular expression.</p>
+					
+					<h3 class="section-heading"> </h3>
+					
+				   <p>Written by <a href="http://innate.cc/about.html">Nathan Patrick</a>. Photographs by <a href="https://unsplash.com">Unsplash</a>.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

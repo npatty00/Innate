@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Innate - Another Tech Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 50px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<!-- Google web fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">innate.cc</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" style="float: right;">
+					 <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+					<li>
+                        <a href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Innate: Another Tech Blog</h1>
+                <p>A collection of digital marketing posts and maker projects. Click a tag below.</p>
+                <a href="tag/smart-mirror.html"><a href="tag/smart-mirror.html"><span class="label label-default">Smart Mirror</span></a></a> <a href="tag/marketing.html"><a href="tag/marketing.html"><span class="label label-primary">Marketing</span></a></a> <a href="tag/raspberry-pi.html"><a href="tag/raspberry-pi.html"><span class="label label-success">Raspberry Pi</span></a></a> <a href="tag/google-analytics.html"><a href="tag/google-analytics.html"><span class="label label-info">Google Analytics</span></a></a> <a href="tag/google-tag-manager.html"><span class="label label-warning">Google Tag Manager</span></a>
+				<p></p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+	<!-- Page Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<h2 class="section-heading">How to Track Dark Social in Google Analytics</h2>
+					
+                        <img class="img-responsive" src="\img\apple-logo.jpeg" alt="">
+
+                    <span class="caption text-muted">IMAGE CAPTION</span>
+                    
+					<p>The channel Dark Social is users who arrive to a website via a messaging app, and its currently incorrectly tracked in Google Analytics. Read The Atlantic’s post on Dark Social as a primer, otherwise you’ll quickly get lost.</p>
+					
+					<p>Dark social is really just another channel so we’ll be changing how analytics groups users into channels. We will be creating a new default channeling grouping, so we can use our new channel in every Google Analytics report.</p>
+
+                    <p>The first step is to create a new default channel. By default Google identifies where a user came from using rules. The following chart shows how a couple channels are automatically grouped. You can find the other channels here. We will simply be adding one more row.</p>
+
+                    <p>Open analytics to the specific view you want to change. If incorrectly implemented you run the risk of ruining your data, so I highly suggest creating a new (Test View).  Go to the Admin Tab, Channel Settings > Channel Grouping.</p>
+
+					<p>This page lists all of the channels Google uses by default and any you’ve created. We’ll be adding Dark Social to this list. </p>
+
+                    <p>Click “Define a new channel” to begin. Name your channel Dark Social, or something less ominous. But how are we going to define these users? We want only people who have a clicked a link from a messaging app. There is no source or medium data from these users, and no clear way to identify them.</p>
+
+					<p>While the following two rules aren’t going to capture all dark social users with 100% accuracy, this will still get us enough data to use. As previously described, these users are currently grouped into direct. Our first rule will pull them out of that channel:</p>
+					   
+					<h3 class="section-heading">Creating the Rules</h3>
+					   
+					<p>Set your first rule to “System Defined Channel” matches “Direct”.</p>
+					
+					<p>The second rule (actually two rules) will grab users who land on a long/complicated URL
+These were likely messaged, as there is no way a user typed them. We are going to accidentally grab people who use bookmarks, but that is undoubtedly less than the number of users we lose to not tracking more simple pages, like the homepage. </p>
+
+					<p>We won’t include simple URLs like the homepage because it is very likely users are actually typing those in. If someone is messaged a link to just the homepage, they will unfortunately still be grouped under Direct.</p>
+					
+					<p>The next rule identifies those complicated URLs. You’ll need to adjust this based on how your site’s URL structure is laid out, but mine uses plenty of “-” and “/”. So I’m going to identify landing pages with more than two “-” or more than two “/” anywhere in the URL. The following regular expression rules (without the quotes)  will accomplish that: </p>
+                   
+				   <p>To test which pages these rules will grab, open any traffic report and analytics and use these rules as page filters. Your page should now look like this (Make sure you clicked “AND” initially and “OR” between the two regexes).</p>
+				   
+				   <p>Click Done and Save your changes. Congratulations, you are now tracking dark social! The changes only affect data collection in the future, so come back in a couple days and explore what's happening under Acquisition > All Traffic > Channels!</p>
+				   
+				   <p>Written by <a href="http://innate.cc/about.html">Nathan Patrick</a>. Photographs by <a href="https://unsplash.com">Unsplash</a>.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
